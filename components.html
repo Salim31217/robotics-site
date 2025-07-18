@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комплектующие | Мир Робототехники</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="site-container">
+        <header class="site-header">
+            <h1>Мир Робототехники</h1>
+        </header>
+        
+        <div class="site-body">
+            <nav class="site-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="projects.html">Проекты</a></li>
+                    <li><a href="components.html">Комплектующие</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+					<li><a href="feedback.php">Отзывы</a></li>
+                </ul>
+            </nav>
+            
+            <main class="site-content">
+                <h2>Комплектующие для роботов</h2>
+                
+                <!-- Блок 1 -->
+                <div class="image-text-container">
+                    <div class="image-text-block">
+                        <img src="images/arduino.jpg" alt="Arduino" class="paper-image">
+                        <div class="paper-description">
+                            <h3>Плата Arduino Uno</h3>
+                            <p><strong>Характеристики:</strong> Микроконтроллер ATmega328P, 14 цифровых входов/выходов, 6 аналоговых входов</p>
+                            <p><strong>Память:</strong> 32 КБ Flash, 2 КБ SRAM, 1 КБ EEPROM</p>
+                            <p><strong>Цена:</strong> <span class="price">1 500 руб.</span></p>
+                            <p>Идеальная плата для начинающих. Простота программирования и большое сообщество пользователей.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 2 -->
+                <div class="image-text-container">
+                    <div class="image-text-block">
+                        <img src="images/raspberry.jpg" alt="Raspberry Pi" class="paper-image">
+                        <div class="paper-description">
+                            <h3>Raspberry Pi 4</h3>
+                            <p><strong>Характеристики:</strong> 4-ядерный процессор 1.5 ГГц, 4 ГБ ОЗУ, Wi-Fi, Bluetooth</p>
+                            <p><strong>Порты:</strong> 2x USB 3.0, 2x USB 2.0, 2x HDMI, Gigabit Ethernet</p>
+                            <p><strong>Цена:</strong> <span class="price">6 500 руб.</span></p>
+                            <p>Мощный одноплатный компьютер для сложных проектов с поддержкой Linux и Python.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 3 -->
+                <div class="image-text-container">
+                    <div class="image-text-block">
+                        <img src="images/servo.jpg" alt="Сервоприводы" class="paper-image">
+                        <div class="paper-description">
+                            <h3>Сервопривод MG996R</h3>
+                            <p><strong>Характеристики:</strong> Крутящий момент 10 кг/см, скорость 0.17 с/60°</p>
+                            <p><strong>Питание:</strong> 4.8-7.2 В</p>
+                            <p><strong>Цена:</strong> <span class="price">800 руб.</span> за штуку</p>
+                            <p>Мощные металлические сервоприводы для роботов-манипуляторов и других механизмов.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок 4 -->
+                <div class="image-text-container">
+                    <div class="image-text-block">
+                        <img src="images/sensor.jpg" alt="Датчики" class="paper-image">
+                        <div class="paper-description">
+                            <h3>Набор датчиков</h3>
+                            <p><strong>В комплекте:</strong> Ультразвуковой, инфракрасный, датчик линии, температуры и влажности</p>
+                            <p><strong>Совместимость:</strong> Arduino, Raspberry Pi</p>
+                            <p><strong>Цена:</strong> <span class="price">2 200 руб.</span> за набор</p>
+                            <p>Все необходимые датчики для создания автономного робота с различными функциями.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="order-form">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    
+                    <label>Тип комплектующих:</label>
+                    <div class="paper-types">
+                        <div class="paper-option">
+                            <input type="radio" id="arduino" name="component-type" value="arduino" checked>
+                            <label for="arduino">Arduino Uno</label>
+                        </div>
+                        <div class="paper-option">
+                            <input type="radio" id="raspberry" name="component-type" value="raspberry">
+                            <label for="raspberry">Raspberry Pi 4</label>
+                        </div>
+                        <div class="paper-option">
+                            <input type="radio" id="servo" name="component-type" value="servo">
+                            <label for="servo">Сервопривод MG996R</label>
+                        </div>
+                        <div class="paper-option">
+                            <input type="radio" id="sensors" name="component-type" value="sensors">
+                            <label for="sensors">Набор датчиков</label>
+                        </div>
+                    </div>
+                    
+                    <label for="quantity">Количество:</label>
+                    <select id="quantity" name="quantity">
+                        <option value="1">1 шт.</option>
+                        <option value="2">2 шт.</option>
+                        <option value="5">5 шт.</option>
+                        <option value="10">10 шт.</option>
+                    </select>
+                    
+                    <button type="submit" class="submit-btn">Отправить заказ</button>
+                </form>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

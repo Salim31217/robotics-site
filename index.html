@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная | Мир Робототехники</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- PWA-конфигурация -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1565C0">
+<link rel="icon" href="/icons/icon-192x192.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .modal-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-container">
+        <header class="site-header">
+            <h1>Мир Робототехники</h1>
+        </header>
+        
+        <div class="site-body">
+            <nav class="site-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="projects.html">Проекты</a></li>
+                    <li><a href="components.html">Комплектующие</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+					<li><a href="feedback.php">Отзывы</a></li>
+                </ul>
+            </nav>
+            
+            <main class="site-content">
+                <!-- Приветственный блок -->
+                <section class="welcome-section">
+                    <h2>Добро пожаловать в мир робототехники!</h2>
+                    <div class="welcome-text">
+                        <p>Наш сайт посвящён увлекательному миру создания роботов - от простых механизмов до сложных автономных систем. Здесь вы найдёте всё для погружения в это перспективное направление.</p>
+                        
+                        <p>В разделе <a href="history.html">"История"</a> мы расскажем о развитии робототехники, от первых механических устройств до современных искусственных интеллектов. Вы узнаете, как технологии изменили нашу жизнь.</p>
+                        
+                        <p>Раздел <a href="projects.html">"Проекты"</a> содержит множество идей и инструкций - от простого робота на Arduino до сложных роботизированных систем. Даже если вы никогда не занимались робототехникой, наши материалы помогут сделать первые шаги.</p>
+                    </div>
+                </section>
+                
+                <!-- Галерея примеров -->
+                <section class="examples-gallery">
+                    <h2>Примеры проектов</h2>
+                    <div class="gallery-grid">
+                        <div class="example-card">
+                            <img src="images/robot1.jpg" alt="Простой робот" onclick="openModal(this)">
+                            <div class="example-caption">
+                                <h3>Для начинающих</h3>
+                                <p>Простые проекты, которые можно собрать с минимальным опытом. Идеальны для первого знакомства с робототехникой.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="example-card">
+                            <img src="images/robot2.jpg" alt="Робот средней сложности" onclick="openModal(this)">
+                            <div class="example-caption">
+                                <h3>Для увлечённых</h3>
+                                <p>Проекты, требующие базовых знаний электроники и программирования. Помогут углубить понимание принципов робототехники.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="example-card">
+                            <img src="images/robot3.jpg" alt="Сложный робот" onclick="openModal(this)">
+                            <div class="example-caption">
+                                <h3>Для профессионалов</h3>
+                                <p>Сложные системы с искусственным интеллектом и компьютерным зрением. Для тех, кто хочет выйти на профессиональный уровень.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Призыв к действию -->
+                <section class="cta-section">
+                    <h2>С чего начать?</h2>
+                    <p>Выберите комплектующие в нашем <a href="components.html">каталоге</a>, найдите подходящий проект и создайте своего первого робота!</p>
+                    <p>Робототехника развивает логическое мышление, программирование и инженерные навыки - идеальное занятие для всех возрастов.</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Модальное окно для просмотра изображений -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="expandedImg" class="modal-img">
+        </div>
+    </div>
+
+    <script>
+        function openModal(img) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("expandedImg");
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            document.body.style.overflow = "hidden";
+        }
+        
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+        
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) {
+                closeModal();
+            }
+        };
+    </script>
+</body>
+</html>

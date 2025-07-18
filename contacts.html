@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Мир Робототехники</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="site-container">
+        <header class="site-header">
+            <h1>Мир Робототехники</h1>
+        </header>
+        
+        <div class="site-body">
+            <nav class="site-menu">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="history.html">История</a></li>
+                    <li><a href="projects.html">Проекты</a></li>
+                    <li><a href="components.html">Комплектующие</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+					<li><a href="feedback.php">Отзывы</a></li>
+                </ul>
+            </nav>
+            
+            <main class="site-content">
+                <h2>Контакты</h2>
+                
+                <div class="contacts-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <a href="mailto:robotics-world@example.com">robotics-world@example.com</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Телефон</h3>
+                        <a href="tel:+79876543210">+7 (987) 654-32-10</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fab fa-telegram"></i>
+                        <h3>Telegram</h3>
+                        <a href="https://t.me/robotics_world" target="_blank">@robotics_world</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fab fa-youtube"></i>
+                        <h3>YouTube</h3>
+                        <a href="https://youtube.com/roboticsworld" target="_blank">Robotics World</a>
+                    </div>
+                </div>
+
+                <!-- Виртуальный помощник -->
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h3><i class="fas fa-robot"></i> Виртуальный помощник</h3>
+                        <button id="toggle-chat"><i class="fas fa-minus"></i></button>
+                    </div>
+                    <div id="chat-output" class="chat-messages"></div>
+                    <div class="chat-input">
+                        <input type="text" id="chat-input" placeholder="Задайте вопрос о робототехнике...">
+                        <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
